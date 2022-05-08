@@ -47,7 +47,7 @@ const prisma = new PrismaClient();
       where: { name: 'Woopa 10' },
       update: {},
       create: {
-        name: 'Woopa 100',
+        name: 'Woopa 10',
 				username: 'ajolonauta10',
 				mission: 'Node'
       },
