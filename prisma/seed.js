@@ -111,8 +111,45 @@ const prisma = new PrismaClient();
       },
     });
 
+    const commander1 = await prisma.commander.upsert({
+      where: { name: 'Commander1' },
+      update: {},
+      create: {
+        name: 'Commander1',
+				username: 'UserCommander1',
+				mainStack: 'Node',
+        currentEnrollments: true,
+        hasAzureCertification: false
+      },
+    });
+
+    const commander2 = await prisma.commander.upsert({
+      where: { name: 'Commander2' },
+      update: {},
+      create: {
+        name: 'Commander2',
+				username: 'UserCommander2',
+				mainStack: 'Node',
+        currentEnrollments: false,
+        hasAzureCertification: true
+      },
+    });
+
+    const commander3 = await prisma.commander.upsert({
+      where: { name: 'Commander3' },
+      update: {},
+      create: {
+        name: 'Commander3',
+				username: 'UserCommander3',
+				mainStack: 'Java',
+        currentEnrollments: true,
+        hasAzureCertification: true
+      },
+    });
+
     console.log('Create 5 explorers');
-    console.log('Create 4 students')
+    console.log('Create 4 students');
+    console.log('Create 3 commanders');
   } catch(e) {
     console.error(e);
     process.exit(1);
