@@ -118,7 +118,7 @@ const prisma = new PrismaClient();
         name: 'Commander1',
 				username: 'UserCommander1',
 				mainStack: 'Node',
-        currentEnrollments: true,
+        currentEnrollment: true,
         hasAzureCertification: false
       },
     });
@@ -130,7 +130,7 @@ const prisma = new PrismaClient();
         name: 'Commander2',
 				username: 'UserCommander2',
 				mainStack: 'Node',
-        currentEnrollments: false,
+        currentEnrollment: false,
         hasAzureCertification: true
       },
     });
@@ -142,7 +142,7 @@ const prisma = new PrismaClient();
         name: 'Commander3',
 				username: 'UserCommander3',
 				mainStack: 'Java',
-        currentEnrollments: true,
+        currentEnrollment: true,
         hasAzureCertification: true
       },
     });
