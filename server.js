@@ -30,6 +30,11 @@ app.get('/students', async (req, res) => {
   res.json(allStudents);
 });
 
+app.get('/commanders', async (req, res) => {
+  const allCommanders =  await prisma.commander.findMany({});
+  res.json(allCommanders);
+});
+
 app.get('/explorers/:id', async (req, res) => {
   const id = req.params.id;
   const explorer = await prisma.explorer.findUnique({where: {id: parseInt(id)}});
