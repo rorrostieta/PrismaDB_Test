@@ -77,6 +77,19 @@ app.post('/students', async (req, res) => {
   return res.json({message});
 });
 
+app.post('/commanders', async (req, res) => {
+  const commander = {
+    name: req.body.name,
+    username: req.body.username,
+    mainStack: req.body.mainStack,
+    currentEnrollment: req.body.currentEnrollment,
+    hasAzureCertification: req.body.hasAzureCertification
+   };
+  const message = 'Commander creado.';
+  await prisma.commander.create({data: commander});
+  return res.json({message});
+});
+
 app.put('/explorers/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
 
