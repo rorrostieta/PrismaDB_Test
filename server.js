@@ -47,6 +47,12 @@ app.get('/students/:id', async (req, res) => {
   res.json(student);
 });
 
+app.get('/commanders/:id', async (req, res) => {
+  const id = req.params.id;
+  const commander = await prisma.commander.findUnique({where: {id: parseInt(id)}});
+  res.json(commander);
+});
+
 app.post('/explorers', async (req, res) => {
   const explorer = {
     name: req.body.name,
